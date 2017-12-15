@@ -54,7 +54,7 @@ node {
     stage('build docker') {
         sh "cp -R src/main/docker target/"
         sh "cp target/*.war target/docker/"
-        dockerImage = docker.build('docker-login/devops', 'target/docker')
+        dockerImage = docker.build('xgoret/myrepo', 'target/docker')
     }
 
     stage('publish docker') {
